@@ -10,14 +10,14 @@
       </li>
       <li class="md:mr-10">
         <nuxt-link
-          to="/"
+          to="/exchanges"
           class="text-xs md:text-sm hover:text-purple-700 text-gray-800"
-          >Markets</nuxt-link
+          >Exchanges</nuxt-link
         >
       </li>
       <li>
         <nuxt-link
-          to="coins/20"
+          to="saved"
           class="text-xs md:text-sm hover:text-purple-700 text-gray-800"
           >Saved</nuxt-link
         >

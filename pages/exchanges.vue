@@ -1,30 +1,33 @@
 <template>
-  <div class="flex justify-between flex-wrap flex-col-reverse md:flex-row">
-    <h1 class="mb-5 text-xl lg:text-2xl w-full font-bold">Coins</h1>
-    <div class="w-full md:w-8/12 mb-5">
-      <coin-item
-        v-for="(item, index) in 10"
-        :key="index"
-        :to="{ path: `/coins/${index}` }"
-      />
-    </div>
-    <div class="w-full md:w-3/12">
-      <div class="mb-5">
-        <market-cap-widget />
+  <div>
+    <h1 class="mb-5 text-xl lg:text-2xl font-bold">Exchanges</h1>
+    <modal-backdrop v-if="modalOpen === true" />
+    <modal v-if="modalOpen === true">
+      <div slot="body">
+        <div class="mb-5">
+          <exchange-header />
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 col-gap-6 row-gap-6">
+          <exchange-pair v-for="(item, index) in 10" :key="index" />
+        </div>
       </div>
-      <div class="mb-5">
-        <total-volume-widget />
-      </div>
-      <div class="mb-5">
-        <dominance-widget />
-      </div>
-    </div>
+    </modal>
+    <section
+      class="w-full mb-5 grid grid-cols-1 lg:grid-cols-4 col-gap-6 row-gap-6"
+    >
+      <markets v-for="(market, index) in 10" :key="index" />
+    </section>
   </div>
 </template>
 
 <script>
 export default {
   layout: 'CoinLayout',
+  data() {
+    return {
+      modalOpen: true,
+    }
+  },
 }
 </script>
 

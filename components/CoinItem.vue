@@ -1,6 +1,6 @@
 <template>
-  <a
-    href="#"
+  <nuxt-link
+    :to="to"
     class="block border bg-white hover:border-purple-600 w-full p-5 pb-20 rounded-2xl coin"
   >
     <div class="flex justify-between">
@@ -56,12 +56,22 @@
         <a href="" class="text-purple-500 hover:text-purple-700">View</a>
       </div>
     </div>
-  </a>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   name: 'CoinItem',
+  props: {
+    to: {
+      type: Object,
+      default() {
+        return {
+          path: '/',
+        }
+      },
+    },
+  },
 }
 </script>
 

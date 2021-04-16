@@ -1,5 +1,5 @@
 <template>
-  <div class="">date</div>
+  <div></div>
 </template>
 
 <script>
