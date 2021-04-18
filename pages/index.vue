@@ -79,6 +79,10 @@ export default {
 </script>
 
 <style>
+body {
+  background: url('/img/purple_blur.svg') 150% 100% no-repeat;
+  background-attachment: fixed;
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;
