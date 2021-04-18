@@ -79,9 +79,17 @@ export default {
 </script>
 
 <style>
+@screen md {
+  body {
+    background: url('/img/purple_blur.svg') 150% 100% no-repeat;
+  }
+}
 body {
-  background: url('/img/purple_blur.svg') 150% 100% no-repeat;
+  background: url('/img/purple_blur.svg') no-repeat;
+  background-position-x: 100px;
+  background-position-y: -20px;
   background-attachment: fixed;
+  background-size: 100%;
 }
 .container {
   margin: 0 auto;
