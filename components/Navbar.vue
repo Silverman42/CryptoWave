@@ -1,6 +1,8 @@
 <template>
   <nav class="flex justify-between items-center max-w-6xl mx-auto p-4">
-    <a href="#" class="w-30 md:inline-block"> CryptoWave </a>
+    <nuxt-link to="/" class="w-30 md:inline-block">
+      <img src="/img/logo.svg" class="w-full" alt="crypto wave logo" />
+    </nuxt-link>
     <ul
       class="w-full border-t md:border-0 md:w-auto fixed bg-white md:relative right-0 bottom-0 justify-around md:justify-end list-none py-3 flex items-center"
     >

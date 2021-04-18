@@ -875,6 +875,21 @@
     postcss "7.0.32"
     purgecss "^2.3.0"
 
+"@iconify/iconify@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@iconify/iconify/-/iconify-1.0.7.tgz#22e6d384482995738746eeb38b9b76588df41d57"
+  integrity sha512-qCbH1V/Ceg302lrgBiiXCZAyqMAq8KqsHYokCpUvgBH6yYfAmvlSkEEBrmJdHofQvfY/+xaeQcsOOTjW7JakNw==
+
+"@iconify/icons-feather@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-feather/-/icons-feather-1.1.0.tgz#83955bb10ff8fe45d5c8131db445da28b3da9d1c"
+  integrity sha512-nl7NB324/5s0B8PjQAOpkVqOxdIYrC3nuyE9hcjzHZ3Pj9Pkqq58qaOaq0UVGn3mq6W+liAY1cA7QnGJBh/MOw==
+
+"@iconify/vue@^1":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@iconify/vue/-/vue-1.0.6.tgz#e15c36305b55ca92f51dd514f784ac926bfd6fe7"
+  integrity sha512-hqzfDXN9sEkes1bDzLPbQchOVACMPB5lwGHkk7StD4PuWLXZjgmLKybhLgsssCjWpHTHzE47dmZvB240eLZlYw==
+
 "@koa/router@^9.0.1":
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/@koa/router/-/router-9.4.0.tgz#734b64c0ae566eb5af752df71e4143edc4748e48"

@@ -3,7 +3,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  layout: 'CoinLayout',
+}
 </script>
 
 <style></style>

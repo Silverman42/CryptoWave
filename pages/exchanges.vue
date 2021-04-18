@@ -1,8 +1,16 @@
 <template>
   <div>
-    <h1 class="mb-5 text-xl lg:text-2xl font-bold">Exchanges</h1>
-    <modal-backdrop v-if="modalOpen === true" />
-    <modal v-if="modalOpen === true">
+    <h1 class="mb-10 text-xl lg:text-2xl font-bold">Exchanges</h1>
+    <modal-backdrop
+      v-if="modalOpen === true"
+      @closeModal="toggleModal(false)"
+    />
+    <modal
+      v-if="modalOpen === true"
+      :isopen="modalOpen"
+      @update:isopen="toggleModal(false)"
+    >
+      Binance
       <div slot="body">
         <div class="mb-5">
           <exchange-header />
@@ -15,7 +23,11 @@
     <section
       class="w-full mb-5 grid grid-cols-1 lg:grid-cols-4 col-gap-6 row-gap-6"
     >
-      <markets v-for="(market, index) in 10" :key="index" />
+      <markets
+        v-for="(market, index) in 10"
+        :key="index"
+        @viewMarket="viewMarketInfo(index)"
+      />
     </section>
   </div>
 </template>
@@ -25,8 +37,16 @@ export default {
   layout: 'CoinLayout',
   data() {
     return {
-      modalOpen: true,
+      modalOpen: false,
     }
+  },
+  methods: {
+    viewMarketInfo(marketId) {
+      this.modalOpen = true
+    },
+    toggleModal(modalState) {
+      this.modalOpen = modalState
+    },
   },
 }
 </script>

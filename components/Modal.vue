@@ -8,8 +8,9 @@
       >
         <button
           class="w-10 h-10 rounded-full flex justify-center items-center border border-gray-300 hover:border-purple-600 hover:text-purple-600"
+          @click="closeModal"
         >
-          B
+          <iconify :icon="chevronLeft" width="20" height="20" />
         </button>
         <p class="text-xl ml-5 font-bold"><slot>Header</slot></p>
       </header>
@@ -21,10 +22,35 @@
 </template>
 
 <script>
+import chevronLeft from '@iconify/icons-feather/chevron-left'
 export default {
+  props: {
+    isopen: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      body: document.querySelector('body'),
+      chevronLeft,
+    }
+  },
   mounted() {
-    const body = document.querySelector('body')
-    body.classList.add('overflow-y-hidden')
+    const vm = this
+    vm.body.classList.add('overflow-y-hidden')
+    window.addEventListener('keyup', (event) => {
+      event.preventDefault()
+      if (event.keyCode === 27) vm.closeModal()
+    })
+  },
+  destroyed() {
+    this.body.classList.remove('overflow-y-hidden')
+  },
+  methods: {
+    closeModal() {
+      return this.$emit('update:isopen', false)
+    },
   },
 }
 </script>

@@ -6,9 +6,7 @@
       <div
         class="flex w-10 h-10 justify-center mx-auto mb-3 items-center rounded-xl bg-purple-200"
       >
-        <span
-          class="rounded-full block w-6 h-6 border-4 border-purple-600"
-        ></span>
+        <img src="/img/icon/feather_twitter.svg" class="w-28" alt="" />
       </div>
       <p class="text-center text-lg text-purple-700 font-bold mb-6">
         Twitter Stats
@@ -28,9 +26,11 @@
       <div
         class="flex w-10 h-10 justify-center mx-auto mb-3 items-center rounded-xl bg-purple-200"
       >
-        <span
-          class="rounded-full block w-6 h-6 border-4 border-purple-600"
-        ></span>
+        <img
+          src="/img/icon/ant-design_reddit-outlined.svg"
+          class="w-28"
+          alt=""
+        />
       </div>
       <p class="text-center text-lg text-white font-bold mb-6">Reddit Stats</p>
       <div class="flex justify-between">
