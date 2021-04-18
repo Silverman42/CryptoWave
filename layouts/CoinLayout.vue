@@ -1,27 +1,24 @@
 <template>
   <div class="font-serif">
     <navbar>
-      <li class="md:mr-10">
-        <nuxt-link
-          to="/"
-          class="text-xs md:text-sm hover:text-purple-700 text-gray-800"
-          >Home</nuxt-link
-        >
-      </li>
-      <li class="md:mr-10">
-        <nuxt-link
-          to="/exchanges"
-          class="text-xs md:text-sm hover:text-purple-700 text-gray-800"
-          >Exchanges</nuxt-link
-        >
-      </li>
-      <li>
-        <nuxt-link
-          to="saved"
-          class="text-xs md:text-sm hover:text-purple-700 text-gray-800"
-          >Saved</nuxt-link
-        >
-      </li>
+      <navbar-link to="/"
+        ><template slot="linkIcon"
+          ><iconify :icon="icon.home" width="18" height="18"
+        /></template>
+        Home
+      </navbar-link>
+      <navbar-link to="/exchanges">
+        <template slot="linkIcon"
+          ><iconify :icon="icon.barChart" width="18" height="18"
+        /></template>
+        Exchanges
+      </navbar-link>
+      <navbar-link to="/saved">
+        <template slot="linkIcon"
+          ><iconify :icon="icon.saved" width="18" height="18"
+        /></template>
+        Saved
+      </navbar-link>
     </navbar>
     <div class="max-w-6xl mx-auto p-4 pb-16">
       <Nuxt />
@@ -30,8 +27,20 @@
 </template>
 
 <script>
+import barChart from '@iconify/icons-feather/bar-chart-2'
+import saved from '@iconify/icons-feather/bookmark'
+import home from '@iconify/icons-feather/home'
 export default {
   name: 'CoinLayout',
+  data() {
+    return {
+      icon: {
+        barChart,
+        saved,
+        home,
+      },
+    }
+  },
 }
 </script>
 
