@@ -25,19 +25,23 @@
           <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
             61764.1
           </p>
-          <span class="text-xs text-gray-500">Exchange Price</span>
+          <span class="text-xs text-gray-500 whitespace-no-wrap"
+            >Exchange Price</span
+          >
         </div>
         <div class="mr-5">
           <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
             4674.814035
           </p>
-          <span class="text-xs text-gray-500">Volume</span>
+          <span class="text-xs text-gray-500 whitespace-no-wrap">Volume</span>
         </div>
         <div class="mr-5">
           <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
             288735681.53914
           </p>
-          <span class="text-xs text-gray-500">Volume (USD)</span>
+          <span class="text-xs text-gray-500 whitespace-no-wrap"
+            >Volume (USD)</span
+          >
         </div>
         <div class="mr-5">
           <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">

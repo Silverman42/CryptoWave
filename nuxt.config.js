@@ -14,6 +14,8 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
+    link: [{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap' }],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)

@@ -15,27 +15,27 @@
     <div class="flex my-5">
       <div class="flex-grow w-full text-white flex overflow-x-auto">
         <div class="mr-5">
-          <p class="text-xs font-bold whitespace-nowrap">$ 138,716,787,187</p>
+          <p class="text-xs font-bold whitespace-no-wrap">$ 138,716,787,187</p>
           <span class="text-xs text-purple-300">Market Cap</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold whitespace-nowrap">$ 138,716,787,187</p>
+          <p class="text-xs font-bold whitespace-no-wrap">$ 138,716,787,187</p>
           <span class="text-xs text-purple-300">Volume 24h</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold whitespace-nowrap">4.50%</p>
+          <p class="text-xs font-bold whitespace-no-wrap">4.50%</p>
           <span class="text-xs text-purple-300">24h%</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold whitespace-nowrap">10.51%</p>
+          <p class="text-xs font-bold whitespace-no-wrap">10.51%</p>
           <span class="text-xs text-purple-300">7d%</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold whitespace-nowrap">0.39%</p>
+          <p class="text-xs font-bold whitespace-no-wrap">0.39%</p>
           <span class="text-xs text-purple-300">1h%</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold whitespace-nowrap">1</p>
+          <p class="text-xs font-bold whitespace-no-wrap">1</p>
           <span class="text-xs text-purple-300">Rank</span>
         </div>
       </div>
