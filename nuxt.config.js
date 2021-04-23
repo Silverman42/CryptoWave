@@ -7,11 +7,12 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Portfolio',
+    title: 'CryptoWave',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
+      { name: 'theme-color', content: '#6b46c1' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     link: [{ rel: 'preconnect', href: 'https://fonts.gstatic.com' }],

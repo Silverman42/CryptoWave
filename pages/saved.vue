@@ -5,6 +5,10 @@
 <script>
 export default {
   layout: 'CoinLayout',
+  transition: {
+    name: 'slide',
+    mode: 'out-in',
+  },
 }
 </script>
 

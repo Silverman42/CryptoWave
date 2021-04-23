@@ -4,7 +4,7 @@
   >
     <div class="max-w-4xl mx-auto px-5 pb-8">
       <header
-        class="py-5 flex sticky top-0 bg-white z-30 items-center border-b mb-5"
+        class="py-5 flex sticky top-0 bg-white z-50 items-center border-b mb-5"
       >
         <button
           class="w-10 h-10 rounded-full flex justify-center items-center border border-gray-300 hover:border-purple-600 hover:text-purple-600"

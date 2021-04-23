@@ -4,7 +4,7 @@
       <img src="/img/logo.svg" class="w-full" alt="crypto wave logo" />
     </nuxt-link>
     <ul
-      class="w-full border-t md:border-0 md:w-auto fixed bg-white md:bg-transparent md:relative right-0 bottom-0 justify-around md:justify-end list-none py-3 flex items-center"
+      class="w-full border-t md:border-0 md:w-auto z-30 fixed bg-white md:bg-transparent md:relative right-0 bottom-0 justify-around md:justify-end list-none py-3 flex items-center"
     >
       <slot>
         <li class="md:mr-10">

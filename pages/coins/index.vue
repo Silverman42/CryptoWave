@@ -18,7 +18,8 @@
         </div>
       </div>
       <div class="mb-5">
-        <coin-header />
+        <coin-header v-if="pageLoading == false" />
+        <header-skeleton v-else />
       </div>
       <div class="md:hidden mb-5">
         <social-media-stats />
@@ -35,11 +36,17 @@
         </primary-button>
       </div>
       <div>
-        <coin-market v-for="(market, index) in 10" :key="index" />
+        <template v-if="listLoading == false">
+          <coin-market v-for="(market, index) in 10" :key="index" />
+        </template>
+        <template v-else>
+          <item-skeleton v-for="(market, index) in 10" :key="index" />
+        </template>
       </div>
     </div>
     <div class="w-full md:w-3/12 hidden md:block">
-      <social-media-stats />
+      <social-media-stats v-if="pageLoading == false" />
+      <social-skeleton v-else />
     </div>
   </div>
 </template>
@@ -52,12 +59,29 @@ import Iconify from '~/components/Iconify.vue'
 export default {
   components: { Iconify },
   layout: 'CoinLayout',
+  transition: {
+    name: 'slide',
+    mode: 'in-out',
+  },
   data() {
     return {
       chevronLeft,
       refresh,
       bookmark,
+      pageLoading: true,
+      listLoading: true,
     }
+  },
+  mounted() {
+    this.loadCoins()
+  },
+  methods: {
+    loadCoins() {
+      setTimeout(() => {
+        this.pageLoading = false
+        this.listLoading = false
+      }, 8000)
+    },
   },
 }
 </script>

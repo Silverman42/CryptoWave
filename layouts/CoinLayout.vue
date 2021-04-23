@@ -48,4 +48,42 @@ export default {
 .font-serif {
   font-family: 'Open Sans', sans-serif;
 }
+/* @screen md {
+  body {
+    background: url('/img/purple_blur.png') no-repeat;
+    background-position-x: 120%;
+    background-position-y: -20%;
+    background-size: 80%;
+  }
+} */
+body {
+  background: url('/img/purple_blur.png') no-repeat;
+  background-position-x: 20vw;
+  background-position-y: -20vh;
+  background-size: 100vw;
+}
+/* Animations */
+.slide-enter-active {
+  animation: slide-in 0.4s ease-in-out;
+}
+.slide-leave-active {
+  animation: slide-out 0.4s ease-in-out;
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 </style>

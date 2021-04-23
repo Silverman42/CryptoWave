@@ -31,11 +31,16 @@
             ></outline-button>
           </div>
         </div>
-        <coin-item
-          v-for="(item, index) in 10"
-          :key="index"
-          :to="{ path: `/coins`, query: { id: index } }"
-        />
+        <template v-if="listLoading == false">
+          <coin-item
+            v-for="(item, index) in 10"
+            :key="index"
+            :to="{ path: `/coins`, query: { id: index } }"
+          />
+        </template>
+        <template v-else>
+          <item-skeleton v-for="(item, index) in 10" :key="index" />
+        </template>
         <div class="pt-5 text-sm flex justify-center">
           <primary-button>
             Load more
@@ -47,13 +52,16 @@
       </div>
       <div class="w-full md:w-3/12">
         <div class="mb-5">
-          <market-cap-widget />
+          <market-cap-widget v-if="pageLoading == false" />
+          <market-cap-skeleton v-else />
         </div>
         <div class="mb-5">
-          <total-volume-widget />
+          <total-volume-widget v-if="pageLoading == false" />
+          <total-volume-skeleton v-else />
         </div>
         <div class="mb-5">
-          <dominance-widget />
+          <dominance-widget v-if="pageLoading == false" />
+          <dominance-skeleton v-else />
         </div>
       </div>
     </section>
@@ -66,6 +74,10 @@ import chevronDown from '@iconify/icons-feather/chevron-down'
 import filter from '@iconify/icons-feather/filter'
 export default {
   layout: 'CoinLayout',
+  transition: {
+    name: 'slide',
+    mode: 'in-out',
+  },
   data() {
     return {
       icon: {
@@ -73,52 +85,22 @@ export default {
         chevronDown,
         filter,
       },
+      pageLoading: true,
+      listLoading: true,
     }
+  },
+  mounted() {
+    this.loadCoins()
+  },
+  methods: {
+    loadCoins() {
+      setTimeout(() => {
+        this.pageLoading = false
+        this.listLoading = false
+      }, 8000)
+    },
   },
 }
 </script>
 
-<style>
-@screen md {
-  body {
-    background: url('/img/purple_blur.svg') 150% 100% no-repeat;
-  }
-}
-body {
-  background: url('/img/purple_blur.svg') no-repeat;
-  background-position-x: 100px;
-  background-position-y: -20px;
-  background-attachment: fixed;
-  background-size: 100%;
-}
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
+<style></style>
