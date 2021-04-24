@@ -22,7 +22,8 @@
         <header-skeleton v-else />
       </div>
       <div class="md:hidden mb-5">
-        <social-media-stats />
+        <social-media-stats v-if="pageLoading == false" />
+        <social-skeleton v-else />
       </div>
       <div class="mb-5 flex text-xs justify-between items-center">
         <span>
