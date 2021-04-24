@@ -1,7 +1,8 @@
 <template>
   <a
     href="#"
-    class="rounded-lg flex flex-col h-52 hover:shadow-xl border border-gray-300 p-5 hover:border-purple-700 bg-white"
+    class="rounded-lg flex flex-col h-52 hover:shadow-xl border border-gray-300 p-5 hover:border-purple-700 bg-white bounce-up"
+    :style="{ animationDelay: `${delay}s` }"
   >
     <div class="flex justify-between items-center mb-3">
       <p class="uppercase text-xs text-purple-900 font-bold">BTC / USDT</p>
@@ -33,6 +34,12 @@
 <script>
 export default {
   name: 'ExchangePair',
+  props: {
+    delay: {
+      type: [String, Number],
+      default: '0.1',
+    },
+  },
 }
 </script>
 

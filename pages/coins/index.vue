@@ -37,7 +37,11 @@
       </div>
       <div>
         <template v-if="listLoading == false">
-          <coin-market v-for="(market, index) in 10" :key="index" />
+          <coin-market
+            v-for="(market, index) in 10"
+            :key="index"
+            :delay="`0.${index}`"
+          />
         </template>
         <template v-else>
           <item-skeleton v-for="(market, index) in 10" :key="index" />
@@ -60,7 +64,7 @@ export default {
   components: { Iconify },
   layout: 'CoinLayout',
   transition: {
-    name: 'slide',
+    name: 'fade',
     mode: 'in-out',
   },
   data() {
@@ -80,7 +84,7 @@ export default {
       setTimeout(() => {
         this.pageLoading = false
         this.listLoading = false
-      }, 8000)
+      }, 2000)
     },
   },
 }

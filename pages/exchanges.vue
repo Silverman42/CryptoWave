@@ -1,31 +1,42 @@
 <template>
   <div>
     <h1 class="mb-10 text-xl lg:text-2xl font-bold">Exchanges</h1>
-    <modal-backdrop
-      v-if="modalOpen === true"
-      @closeModal="toggleModal(false)"
-    />
-    <modal
-      v-if="modalOpen === true"
-      :isopen="modalOpen"
-      @update:isopen="toggleModal(false)"
-    >
-      Binance
-      <div slot="body">
-        <div class="mb-5">
-          <exchange-header v-if="loadingExchangeData === false" />
-          <header-skeleton v-else />
+    <transition name="fade">
+      <modal-backdrop
+        v-if="modalOpen === true"
+        @closeModal="toggleModal(false)"
+      />
+    </transition>
+    <transition name="slide">
+      <modal
+        v-if="modalOpen === true"
+        :isopen="modalOpen"
+        @update:isopen="toggleModal(false)"
+      >
+        Binance
+        <div slot="body">
+          <div class="mb-5">
+            <exchange-header v-if="loadingExchangeData === false" />
+            <header-skeleton v-else />
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 col-gap-6 row-gap-6">
+            <template v-if="loadingPairList === false">
+              <exchange-pair
+                v-for="(item, index) in 10"
+                :key="index"
+                :delay="`0.${index}`"
+              />
+            </template>
+            <template v-else>
+              <exchange-pair-skeleton
+                v-for="(item, index) in 10"
+                :key="index"
+              />
+            </template>
+          </div>
         </div>
-        <div class="grid grid-cols-2 lg:grid-cols-4 col-gap-6 row-gap-6">
-          <template v-if="loadingPairList === false">
-            <exchange-pair v-for="(item, index) in 10" :key="index" />
-          </template>
-          <template v-else>
-            <exchange-pair-skeleton v-for="(item, index) in 10" :key="index" />
-          </template>
-        </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
     <section
       class="w-full mb-5 grid grid-cols-1 lg:grid-cols-4 col-gap-6 row-gap-6"
     >
@@ -33,6 +44,7 @@
         <markets
           v-for="(market, index) in 10"
           :key="index"
+          :delay="`0.${index}`"
           @viewMarket="viewMarketInfo(index)"
         />
       </template>
@@ -47,7 +59,7 @@
 export default {
   layout: 'CoinLayout',
   transition: {
-    name: 'slide',
+    name: 'fade',
     mode: 'in-out',
   },
   data() {
@@ -79,12 +91,12 @@ export default {
     loadExchangePairs() {
       setTimeout(() => {
         this.changeExchangeInfoState(false)
-      }, 7000)
+      }, 2000)
     },
     loadList() {
       setTimeout(() => {
         this.loadingList = false
-      }, 7000)
+      }, 2000)
     },
   },
 }

@@ -1,7 +1,8 @@
 <template>
   <div
     tabindex="-1"
-    class="rounded-lg cursor-pointer outline-none flex flex-col hover:shadow-xl h-56 border border-gray-300 p-5 hover:border-purple-700 bg-white"
+    class="rounded-lg cursor-pointer outline-none flex flex-col hover:shadow-xl h-56 border border-gray-300 p-5 hover:border-purple-700 bg-white bounce-up"
+    :style="{ animationDelay: `${delay}s` }"
     @click="viewMarketData"
   >
     <div class="flex justify-between items-center mb-3">
@@ -45,6 +46,12 @@
 <script>
 export default {
   name: 'Market',
+  props: {
+    delay: {
+      type: [String, Number],
+      default: '0.1',
+    },
+  },
   methods: {
     viewMarketData() {
       this.$emit('viewMarket')

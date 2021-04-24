@@ -1,7 +1,8 @@
 <template>
   <nuxt-link
     :to="to"
-    class="block border bg-white hover:border-purple-600 w-full p-5 pb-20 rounded-2xl coin"
+    class="block border bg-white hover:border-purple-600 w-full p-5 pb-20 rounded-2xl coin bounce-up"
+    :style="{ animationDelay: `${delay}s` }"
   >
     <div class="flex justify-between">
       <div class="w-5/12 mr-2 flex">
@@ -63,6 +64,10 @@
 export default {
   name: 'CoinItem',
   props: {
+    delay: {
+      type: [String, Number],
+      default: '0.1',
+    },
     to: {
       type: Object,
       default() {

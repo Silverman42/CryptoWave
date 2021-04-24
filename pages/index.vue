@@ -35,6 +35,7 @@
           <coin-item
             v-for="(item, index) in 10"
             :key="index"
+            :delay="`0.${index}`"
             :to="{ path: `/coins`, query: { id: index } }"
           />
         </template>
@@ -75,7 +76,7 @@ import filter from '@iconify/icons-feather/filter'
 export default {
   layout: 'CoinLayout',
   transition: {
-    name: 'slide',
+    name: 'fade',
     mode: 'in-out',
   },
   data() {
@@ -97,7 +98,7 @@ export default {
       setTimeout(() => {
         this.pageLoading = false
         this.listLoading = false
-      }, 8000)
+      }, 2000)
     },
   },
 }

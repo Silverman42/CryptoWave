@@ -48,28 +48,32 @@ export default {
 .font-serif {
   font-family: 'Open Sans', sans-serif;
 }
-/* @screen md {
-  body {
-    background: url('/img/purple_blur.png') no-repeat;
-    background-position-x: 120%;
-    background-position-y: -20%;
-    background-size: 80%;
-  }
-} */
 body {
   background: url('/img/purple_blur.png') no-repeat;
   background-position-x: 20vw;
   background-position-y: -20vh;
   background-size: 100vw;
+  overflow-x: hidden;
 }
+
 /* Animations */
+.bounce-up {
+  animation: bounceUp 0.3s ease-in forwards;
+  animation-iteration-count: 1;
+}
+.fade-enter-active {
+  animation: fade 0.2s ease-in-out;
+}
+.fade-leave-active {
+  animation: fade 0.2s ease-in-out reverse;
+}
 .slide-enter-active {
-  animation: slide-in 0.4s ease-in-out;
+  animation: slide 0.2s ease-in-out;
 }
 .slide-leave-active {
-  animation: slide-out 0.4s ease-in-out;
+  animation: slide 0.2s ease-in-out reverse;
 }
-@keyframes slide-in {
+@keyframes fade {
   0% {
     opacity: 0;
   }
@@ -78,12 +82,28 @@ body {
   }
 }
 
-@keyframes slide-out {
+@keyframes bounceUp {
   0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
     opacity: 1;
+    transform: translateY(20px);
   }
   100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide {
+  0% {
     opacity: 0;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }
 </style>

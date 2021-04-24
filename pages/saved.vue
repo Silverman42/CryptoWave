@@ -6,7 +6,7 @@
 export default {
   layout: 'CoinLayout',
   transition: {
-    name: 'slide',
+    name: 'fade',
     mode: 'out-in',
   },
 }
