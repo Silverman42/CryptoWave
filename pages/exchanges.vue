@@ -1,6 +1,15 @@
 <template>
   <div>
-    <h1 class="mb-10 text-xl lg:text-2xl font-bold">Exchanges</h1>
+    <div class="flex mb-10 justify-between items-center mb-10">
+      <h1 class="text-xl lg:text-2xl font-bold">Exchanges</h1>
+      <div class="text-xs">
+        <primary-button
+          >Refresh
+          <span class="ml-2"
+            ><iconify :icon="refresh" width="14" height="14" /></span
+        ></primary-button>
+      </div>
+    </div>
     <transition name="fade">
       <modal-backdrop
         v-if="modalOpen === true"
@@ -56,6 +65,7 @@
 </template>
 
 <script>
+import refresh from '@iconify/icons-feather/refresh-cw'
 export default {
   layout: 'CoinLayout',
   transition: {
@@ -68,6 +78,7 @@ export default {
       loadingList: true,
       loadingPairList: true,
       loadingExchangeData: true,
+      refresh,
     }
   },
   mounted() {

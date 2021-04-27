@@ -1,5 +1,5 @@
 <template>
-  <div :to="to" class="block border bg-white w-full p-5 pb-20 rounded-2xl coin">
+  <div class="block border bg-white w-full p-5 pb-20 rounded-2xl coin">
     <div class="flex justify-between">
       <div class="w-5/12 mr-2 flex">
         <figure
