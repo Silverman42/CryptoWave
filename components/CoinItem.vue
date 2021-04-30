@@ -18,43 +18,43 @@
         </div>
       </div>
       <div class="w-6/12 text-right text-lg text-purple-900 font-bold">
-        $ {{ data.price_usd | formatNumber }}
+        ${{ data.price_usd | formatNumber }}
       </div>
     </div>
     <div class="flex mt-5">
       <div class="flex-grow flex overflow-x-auto">
         <div class="mr-5">
-          <p class="text-xs font-bold text-purple-900 whitespace-nowrap">
+          <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
             ${{ data.market_cap_usd | formatNumber }}
           </p>
           <span class="text-xs text-gray-500">Market Cap</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold text-purple-900 whitespace-nowrap">
+          <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
             ${{ data.volume24 | formatNumber }}
           </p>
           <span class="text-xs text-gray-500">Volume 24h</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold text-purple-900 whitespace-nowrap">
-            {{ data.percent_change_24h }} %
+          <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
+            {{ data.percent_change_24h }}%
           </p>
           <span class="text-xs text-gray-500">24h%</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold text-purple-900 whitespace-nowrap">
-            {{ data.percent_change_7d }} %
+          <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
+            {{ data.percent_change_7d }}%
           </p>
           <span class="text-xs text-gray-500">7d%</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold text-purple-900 whitespace-nowrap">
-            {{ data.percent_change_1h }} %
+          <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
+            {{ data.percent_change_1h }}%
           </p>
           <span class="text-xs text-gray-500">1h%</span>
         </div>
         <div class="mr-5">
-          <p class="text-xs font-bold text-purple-900 whitespace-nowrap">
+          <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
             {{ data.rank }}
           </p>
           <span class="text-xs text-gray-500">Rank</span>

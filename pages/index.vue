@@ -35,16 +35,16 @@
             ></outline-button>
           </div>
         </div>
-        <template v-if="listLoading == false">
+        <template v-if="pageLoading == false">
           <coin-item
             v-for="(coin, index) in coins"
-            :key="index"
+            :key="`${index}cl`"
             :delay="`0.${index}`"
             :to="{ path: `/coins`, query: { id: coin.id || 0 } }"
             :data="coin"
           />
         </template>
-        <template v-else>
+        <template v-if="listLoading == true">
           <item-skeleton v-for="(item, index) in 10" :key="index" />
         </template>
         <div class="pt-5 text-sm flex justify-center">

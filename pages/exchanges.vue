@@ -4,6 +4,8 @@
       <h1 class="text-xl lg:text-2xl font-bold">Exchanges</h1>
       <div class="text-xs">
         <primary-button
+          :disabled="loadingList"
+          @clickButton="refreshExchangelist"
           >Refresh
           <span class="ml-2"
             ><iconify :icon="refresh" width="14" height="14" /></span
@@ -22,18 +24,28 @@
         :isopen="modalOpen"
         @update:isopen="toggleModal(false)"
       >
-        Binance
+        {{ selectedData.name }}
         <div slot="body">
           <div class="mb-5">
-            <exchange-header v-if="loadingExchangeData === false" />
+            <exchange-header
+              v-if="loadingExchangeData === false"
+              :data="selectedData"
+            />
             <header-skeleton v-else />
+          </div>
+          <div class="mb-5 text-sm">
+            Top pairs for
+            <span class="capitalize text-purple-500">{{
+              selectedData.name
+            }}</span>
           </div>
           <div class="grid grid-cols-2 lg:grid-cols-4 col-gap-6 row-gap-6">
             <template v-if="loadingPairList === false">
               <exchange-pair
-                v-for="(item, index) in 10"
+                v-for="(pair, index) in selectedExchangePairs"
                 :key="index"
                 :delay="`0.${index}`"
+                :data="pair"
               />
             </template>
             <template v-else>
@@ -51,10 +63,11 @@
     >
       <template v-if="loadingList == false">
         <markets
-          v-for="(market, index) in 10"
+          v-for="(market, key, index) in exchanges"
           :key="index"
           :delay="`0.${index}`"
-          @viewMarket="viewMarketInfo(index)"
+          :data="market"
+          @viewMarket="viewMarketInfo($event)"
         />
       </template>
       <template v-else>
@@ -68,6 +81,9 @@
 import refresh from '@iconify/icons-feather/refresh-cw'
 export default {
   layout: 'CoinLayout',
+  async fetch() {
+    await this.loadExchanges()
+  },
   transition: {
     name: 'fade',
     mode: 'in-out',
@@ -79,15 +95,29 @@ export default {
       loadingPairList: true,
       loadingExchangeData: true,
       refresh,
+      exchanges: {},
+      selectedExchangePairs: [],
+      selectedData: {
+        name: '',
+        name_id: '',
+        url: '',
+        country: '',
+        date_live: '0000-00-00 00:00:00',
+        volume_usd: '',
+        fiat: '0',
+        volume_usd_adj: '',
+        pairs: '',
+        usdt: '',
+        date_added: '0000-00-00 00:00:00',
+        id: '0',
+      },
     }
   },
-  mounted() {
-    this.loadList()
-  },
   methods: {
-    viewMarketInfo(marketId) {
+    viewMarketInfo(marketData) {
       this.modalOpen = true
-      this.loadExchangePairs()
+      this.loadExchangePairs(marketData.id)
+      this.selectedData = marketData
     },
     toggleModal(modalState) {
       this.modalOpen = modalState
@@ -99,15 +129,25 @@ export default {
       this.loadingPairList = state
       this.loadingExchangeData = state
     },
-    loadExchangePairs() {
-      setTimeout(() => {
-        this.changeExchangeInfoState(false)
-      }, 2000)
+    async loadExchangePairs(exchangeId) {
+      await fetch(`https://api.coinlore.net/api/exchange/?id=${exchangeId}`)
+        .then((res) => res.json())
+        .then((res) => {
+          this.selectedExchangePairs = res.pairs
+          this.changeExchangeInfoState(false)
+        })
     },
-    loadList() {
-      setTimeout(() => {
-        this.loadingList = false
-      }, 2000)
+    async loadExchanges() {
+      await fetch('https://api.coinlore.net/api/exchanges/')
+        .then((res) => res.json())
+        .then((res) => {
+          this.exchanges = res
+          this.loadingList = false
+        })
+    },
+    refreshExchangelist() {
+      this.loadingList = true
+      this.loadExchanges()
     },
   },
 }

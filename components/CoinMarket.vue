@@ -21,7 +21,7 @@
       <div
         class="w-6/12 text-right text-purple-900 text-lg text-purple-00 font-bold"
       >
-        $ {{ data.price_usd | formatNumber }}
+        ${{ data.price_usd | formatNumber }}
       </div>
     </div>
     <div class="flex mt-5">
@@ -42,7 +42,7 @@
         </div>
         <div class="mr-5">
           <p class="text-xs font-bold text-purple-900 whitespace-no-wrap">
-            $ {{ data.volume_usd | formatNumber }}
+            ${{ data.volume_usd | formatNumber }}
           </p>
           <span class="text-xs text-gray-500 whitespace-no-wrap"
             >Volume (USD)</span
@@ -72,14 +72,6 @@ export default {
       return formatted
     },
   },
-  computed: {
-    nameId() {
-      return this.data.name.toLowerCase().replace(' ', '-')
-    },
-    date() {
-      return new Date(this.data.time).toLocaleString()
-    },
-  },
   props: {
     delay: {
       type: [String, Number],
@@ -99,6 +91,14 @@ export default {
           time: '1619523412',
         }
       },
+    },
+  },
+  computed: {
+    nameId() {
+      return this.data.name.toLowerCase().replace(' ', '-')
+    },
+    date() {
+      return new Date(this.data.time).toLocaleString()
     },
   },
 }

@@ -12,7 +12,7 @@
         >
           <iconify :icon="chevronLeft" width="20" height="20" />
         </button>
-        <p class="text-xl ml-5 font-bold"><slot>Header</slot></p>
+        <p class="text-xl ml-5 font-bold capitalize"><slot>Header</slot></p>
       </header>
       <section>
         <slot name="body" />

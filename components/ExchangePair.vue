@@ -5,27 +5,31 @@
     :style="{ animationDelay: `${delay}s` }"
   >
     <div class="flex justify-between items-center mb-3">
-      <p class="uppercase text-xs text-purple-900 font-bold">BTC / USDT</p>
+      <p class="uppercase text-xs text-purple-900 font-bold uppercase">
+        {{ data.base }} / {{ data.quote }}
+      </p>
       <div class="inline-flex">
         <img
-          src="https://www.coinlore.com/img/25x25/bitcoin.png"
+          src="/img/coin.svg"
           alt=""
-          class="w-10 h-10 border-4 border-white rounded-full bg-purple-700"
+          class="w-10 h-10 rounded-full bg-yellow-200 object-contain object-center p-1"
           srcset=""
         />
         <img
-          src="https://www.coinlore.com/img/25x25/ethereum.png"
+          src="/img/coin_purple.svg"
           alt=""
-          class="-ml-3 border-4 border-white w-10 h-10 rounded-full bg-purple-700"
+          class="-ml-4 w-10 h-10 rounded-full bg-purple-200 object-contain object-center p-1"
           srcset=""
         />
       </div>
     </div>
-    <p class="font-bold text-lg text-purple-700 mb-3">$ 579.9</p>
+    <p class="font-bold text-lg text-purple-700 mb-3">
+      ${{ data.price_usd | formatNumber }}
+    </p>
     <div class="mt-auto">
-      <span class="text-sm block text-purple-900 font-bold"
-        >5192501791.0689</span
-      >
+      <span class="text-sm block text-purple-900 font-bold">{{
+        data.volume | formatNumber
+      }}</span>
       <span class="text-gray-600 block text-xs">Volume</span>
     </div>
   </a>
@@ -34,10 +38,33 @@
 <script>
 export default {
   name: 'ExchangePair',
+  filters: {
+    formatNumber(number, parseType = 'float') {
+      const parsedNumber =
+        parseType === 'int' ? parseInt(number) : parseFloat(number)
+      const formatted = new Intl.NumberFormat('en-US', {
+        style: 'decimal',
+        maximumFractionDigits: 2,
+      }).format(parsedNumber)
+      return formatted
+    },
+  },
   props: {
     delay: {
       type: [String, Number],
       default: '0.1',
+    },
+    data: {
+      type: Object,
+      default() {
+        return {
+          base: '',
+          quote: '',
+          volume: '0.0',
+          price: '0.0',
+          price_usd: '0.0',
+        }
+      },
     },
   },
 }

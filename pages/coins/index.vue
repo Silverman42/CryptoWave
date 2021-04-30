@@ -44,7 +44,7 @@
           </primary-button>
         </div>
         <div>
-          <template v-if="listLoading == false">
+          <template v-if="pageLoading == false">
             <coin-market
               v-for="(market, index) in coinMarkets"
               :key="index"
@@ -52,7 +52,7 @@
               :data="{ ...market }"
             />
           </template>
-          <template v-else>
+          <template v-if="listLoading == true">
             <item-skeleton v-for="(market, index) in 10" :key="index" />
           </template>
         </div>
