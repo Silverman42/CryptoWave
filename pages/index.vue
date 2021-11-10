@@ -208,10 +208,6 @@ export default {
           'A simple web application for getting realtime data about cryptocurrencies',
       },
       {
-        property: 'twitter:card',
-        content: 'summary_large_image',
-      },
-      {
         property: 'twitter:url',
         content: 'http://crypto-wave.netlify.app',
       },
@@ -225,14 +221,6 @@ export default {
           'A simple web application for getting realtime data about cryptocurrencies',
       },
       {
-        property: 'twitter:image',
-        content: 'http://crypto-wave.netlify.app/img/metaimage.jpg',
-      },
-      {
-        property: 'og:type',
-        content: 'website',
-      },
-      {
         property: 'og:url',
         content: 'http://crypto-wave.netlify.app',
       },
@@ -244,10 +232,6 @@ export default {
         property: 'og:description',
         content:
           'A simple web application for getting realtime data about cryptocurrencies',
-      },
-      {
-        property: 'og:image',
-        content: 'http://crypto-wave.netlify.app/img/metaimage.jpg',
       },
     ],
   },
