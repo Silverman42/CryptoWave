@@ -150,6 +150,40 @@ export default {
       this.loadExchanges()
     },
   },
+  head: {
+    title: 'CryptoWave::Exchanges',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'All popular crypto exchnages from round the world',
+      },
+      {
+        property: 'twitter:url',
+        content: 'http://crypto-wave.netlify.app/exchanges',
+      },
+      {
+        property: 'twitter:title',
+        content: 'CryptoWave::Exchanges',
+      },
+      {
+        property: 'twitter:description',
+        content: 'All popular crypto exchnages from round the world',
+      },
+      {
+        property: 'og:url',
+        content: 'http://crypto-wave.netlify.app/exchanges',
+      },
+      {
+        property: 'og:title',
+        content: 'CryptoWave::Exchanges',
+      },
+      {
+        property: 'og:description',
+        content: 'All popular crypto exchnages from round the world',
+      },
+    ],
+  },
 }
 </script>
 

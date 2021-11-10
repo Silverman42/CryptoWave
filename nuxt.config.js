@@ -12,11 +12,33 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'theme-color', content: '#6b46c1' }
+      { name: 'theme-color', content: '#6b46c1' },
+      {
+        property: 'twitter:image',
+        content: 'http://crypto-wave.netlify.app/img/metaimage.jpg',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        property: 'og:image',
+        content: 'http://crypto-wave.netlify.app/img/metaimage.jpg',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    link: [{ rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
-    link: [{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/img/favicon.png' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
