@@ -171,7 +171,7 @@ export default {
       title: 'CryptoWave::Coin detail',
       meta: [
         {
-          hid: 'description',
+          hid: 'coins',
           name: 'description',
           content: 'Full information about a selected coin',
         },

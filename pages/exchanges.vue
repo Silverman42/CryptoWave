@@ -155,7 +155,7 @@ export default {
       title: 'CryptoWave::Exchanges',
       meta: [
         {
-          hid: 'description',
+          hid: 'exchanges',
           name: 'description',
           content: 'All popular crypto exchnages from round the world',
         },

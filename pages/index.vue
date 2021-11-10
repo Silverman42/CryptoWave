@@ -203,7 +203,7 @@ export default {
       title: 'CryptoWave',
       meta: [
         {
-          hid: 'description',
+          hid: 'homepage',
           name: 'description',
           content:
             'A simple web application for getting realtime data about cryptocurrencies',
