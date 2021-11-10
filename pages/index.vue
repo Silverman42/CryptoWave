@@ -198,42 +198,44 @@ export default {
     },
   },
 
-  head: {
-    title: 'CryptoWave',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'A simple web application for getting realtime data about cryptocurrencies',
-      },
-      {
-        property: 'twitter:url',
-        content: 'http://crypto-wave.netlify.app',
-      },
-      {
-        property: 'twitter:title',
-        content: 'CryptoWave',
-      },
-      {
-        property: 'twitter:description',
-        content:
-          'A simple web application for getting realtime data about cryptocurrencies',
-      },
-      {
-        property: 'og:url',
-        content: 'http://crypto-wave.netlify.app',
-      },
-      {
-        property: 'og:title',
-        content: 'CryptoWave',
-      },
-      {
-        property: 'og:description',
-        content:
-          'A simple web application for getting realtime data about cryptocurrencies',
-      },
-    ],
+  head() {
+    return {
+      title: 'CryptoWave',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'A simple web application for getting realtime data about cryptocurrencies',
+        },
+        {
+          property: 'twitter:url',
+          content: 'http://crypto-wave.netlify.app',
+        },
+        {
+          property: 'twitter:title',
+          content: 'CryptoWave',
+        },
+        {
+          property: 'twitter:description',
+          content:
+            'A simple web application for getting realtime data about cryptocurrencies',
+        },
+        {
+          property: 'og:url',
+          content: 'http://crypto-wave.netlify.app',
+        },
+        {
+          property: 'og:title',
+          content: 'CryptoWave',
+        },
+        {
+          property: 'og:description',
+          content:
+            'A simple web application for getting realtime data about cryptocurrencies',
+        },
+      ],
+    }
   },
 }
 </script>

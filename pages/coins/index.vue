@@ -166,39 +166,41 @@ export default {
       await this.fetchMarkets()
     },
   },
-  head: {
-    title: 'CryptoWave::Coin detail',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Full information about a selected coin',
-      },
-      {
-        property: 'twitter:url',
-        content: 'http://crypto-wave.netlify.app/coins',
-      },
-      {
-        property: 'twitter:title',
-        content: 'CryptoWave::Coin detail',
-      },
-      {
-        property: 'twitter:description',
-        content: 'Full information about a selected coin',
-      },
-      {
-        property: 'og:url',
-        content: 'http://crypto-wave.netlify.app/coins',
-      },
-      {
-        property: 'og:title',
-        content: 'CryptoWave::Coin detail',
-      },
-      {
-        property: 'og:description',
-        content: 'Full information about a selected coin',
-      },
-    ],
+  head() {
+    return {
+      title: 'CryptoWave::Coin detail',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Full information about a selected coin',
+        },
+        {
+          property: 'twitter:url',
+          content: 'http://crypto-wave.netlify.app/coins',
+        },
+        {
+          property: 'twitter:title',
+          content: 'CryptoWave::Coin detail',
+        },
+        {
+          property: 'twitter:description',
+          content: 'Full information about a selected coin',
+        },
+        {
+          property: 'og:url',
+          content: 'http://crypto-wave.netlify.app/coins',
+        },
+        {
+          property: 'og:title',
+          content: 'CryptoWave::Coin detail',
+        },
+        {
+          property: 'og:description',
+          content: 'Full information about a selected coin',
+        },
+      ],
+    }
   },
 }
 </script>
