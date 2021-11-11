@@ -1,4 +1,10 @@
-# Portfolio
+# Cryptowave
+
+A web application for viewing latest information about cryptocurrencies and exchanges markets
+
+## Website preview
+
+http://crypto-wave.netlify.app
 
 ## Build Setup
 
@@ -17,4 +23,11 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## About
+
+As an avid follower of blockchain technologies and cryptocurrency, i wanted to create a simple web application that will give me timely information about cryptocurrencies and crypto exchange markets around world in a alluring and simplistic manner. Hence Cryptowave was born.
+
+## Development stack
+
+- Nuxtjs
+- TailwindCss
