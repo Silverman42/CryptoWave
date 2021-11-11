@@ -1,3 +1,5 @@
+<img src="/static/img/logo.svg" alt="cryptowave logo" width="100"/> <br>
+
 # Cryptowave
 
 A web application for viewing latest information about cryptocurrencies and exchanges markets
